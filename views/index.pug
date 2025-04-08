@@ -1,0 +1,33 @@
+//- index.pug
+extends layout
+
+block content
+  h2 Search Songs
+  form(action="/search" method="POST")
+    input(type="text" name="query" placeholder="Search for a song or artist" required)
+    select(name="genre")
+      option(value="") All Genres
+      option(value="pop") Pop
+      option(value="rock") Rock
+      option(value="hip-hop") Hip-Hop
+      option(value="jazz") Jazz
+      option(value="classical") Classical
+      option(value="country") Country
+      option(value="dance") Dance
+      option(value="reggae") Reggae
+      option(value="metal") Metal
+    button(type="submit") Search
+
+  if results
+    h3 Results:
+    ul
+      each song in results
+        li
+          h4= song.name
+          p Artist: #{song.artists[0].name}
+          p Album: #{song.album.name}
+          form(action=`/song/${song.id}` method="POST")
+            input(type="hidden" name="songId" value=song.id)
+            input(type="hidden" name="title" value=song.name)
+            input(type="hidden" name="artist" value=song.artists[0].name)
+            button(type="submit") View Lyrics

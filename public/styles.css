@@ -1,0 +1,133 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+header {
+  background-color:  #222;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+main {
+  padding: 2rem;
+}
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+form {
+  margin-bottom: 1.5rem;
+}
+input, select, button {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+audio {
+  margin-top: 1rem;
+  display: block;
+}
+pre {
+  background-color: #fff;
+  padding: 1rem;
+  white-space: pre-wrap;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #17a44c;
+}
+.song-details {
+  margin-bottom: 1.5rem;
+}
+
+.song-title {
+  font-size: 2rem;
+  color: #1DB954;
+  margin-bottom: 0.5rem;
+}
+
+.song-artist {
+  font-size: 1.1rem;
+}
+
+.lyrics-section {
+  margin-bottom: 2rem;
+}
+
+.lyrics-box {
+  background-color: #fff;
+  padding: 1rem;
+  border-left: 5px solid #1DB954;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.preview-section {
+  margin-bottom: 1.5rem;
+}
+
+.spotify-link {
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: #1DB954;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background-color: #17a44c;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  align-items: center;
+}
+.actions a.button,
+.actions .button {
+  margin: 0;
+}
+.favorite-form {
+  margin: 0;
+}

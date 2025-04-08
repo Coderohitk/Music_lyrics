@@ -1,0 +1,21 @@
+//- favorites.pug
+extends layout
+
+block content
+  h2 Your Favorite Songs
+
+  if favorites.length
+    ul
+      each song, i in favorites
+        li
+          h4= song.title
+          p Artist: #{song.artist}
+          if song.preview_url
+            audio(controls)
+              source(src=song.preview_url type="audio/mpeg")
+              | Your browser does not support the audio element.
+          form(action="/remove-favorite" method="POST")
+            input(type="hidden" name="index" value=i)
+            button(type="submit") Remove
+  else
+    p No favorites yet. Search and add some!

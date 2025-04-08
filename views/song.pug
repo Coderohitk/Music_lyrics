@@ -1,0 +1,26 @@
+//- song.pug
+extends layout
+
+block content
+  .song-details
+    h2.song-title= song.title
+    p.song-artist
+      strong Artist:
+      |  #{song.artist}
+
+  .lyrics-section
+    h3 Lyrics
+    if lyrics
+      pre.lyrics-box= lyrics
+    else
+      p.no-lyrics Sorry, no lyrics were found for this song.
+
+  .actions
+    if song.id
+      a.button(href=`https://open.spotify.com/track/${song.id}` target="_blank") 🎵 Listen on Spotify
+
+    form.favorite-form(action="/favorite" method="POST")
+      input(type="hidden" name="title" value=song.title)
+      input(type="hidden" name="artist" value=song.artist)
+      input(type="hidden" name="preview_url" value=song.preview_url)
+      button(type="submit" class="button") Add to Favorites
